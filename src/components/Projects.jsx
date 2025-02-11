@@ -1,13 +1,12 @@
 import React, { useEffect } from "react";
 import foodOrder from "../assets/food-order.jpg";
-import streamShare from "../assets/stream-share.jpg";
+import codexcollab from "../assets/codexcollab.png";
 import netflix from "../assets/Netflix clone.jpg";
 import forms from "../assets/forms.jpg";
 import wings from "../assets/Wings.jpg";
 import messenger from "../assets/messenger.jpg";
 import { initContentWayPoint, initMagnificPopup } from "../utils/customScripts";
 
-// Reusable ProjectCard Component
 const ProjectCard = ({ title, description, imgUrl, liveLink, codeLink }) => {
   return (
     <div className="col-md-6">
@@ -44,11 +43,11 @@ export default function Projects() {
 
   const projects = [
     {
-      title: "Stream-share",
+      title: "codexcollab",
       description: "MERN Fullstack",
-      imgUrl: streamShare,
-      liveLink: "https://stream-share-code.vercel.app",
-      codeLink: "https://github.com/Surya-palanisamy/stream-share",
+      imgUrl: codexcollab,
+      liveLink: "https://code.suryapalanisamy.live",
+      codeLink: "https://github.com/Surya-palanisamy/codexcollab",
     },
     {
       title: "Netflix Clone",
@@ -82,7 +81,7 @@ export default function Projects() {
       title: "messenger with socket-io",
       description: "Backend Project",
       imgUrl: messenger,
-      liveLink: "https://messenger-app-socket-io.vercel.app/",
+      liveLink: "https://chat.suryapalanisamy.live/",
       codeLink: "https://github.com/Surya-palanisamy/Chat-App-Socket.io",
     },
   ];
