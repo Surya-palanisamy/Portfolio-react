@@ -46,19 +46,19 @@ export default function Home() {
                     </span>
                   </h1>
                   <p className="d-flex justify-content-center">
-  <a
-    href="mailto:sit23it161@sairamtap.edu.in"
-    className="btn btn-primary py-3 px-4 mx-2"
-  >
-    Hire me
-  </a>
-  <a
-    href="#projects-section"
-    className="btn btn-white btn-outline-white py-3 px-4 mx-2"
-  >
-    My works
-  </a>
-</p>
+                    <a
+                      href="mailto:sit23it161@sairamtap.edu.in"
+                      className="btn btn-primary py-3 px-4 mx-2"
+                    >
+                      Hire me
+                    </a>
+                    <a
+                      href="#projects-section"
+                      className="btn btn-white btn-outline-white py-3 px-4 mx-2"
+                    >
+                      My works
+                    </a>
+                  </p>
                 </div>
               </div>
             </div>

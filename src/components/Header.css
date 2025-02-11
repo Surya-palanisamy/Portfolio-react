@@ -1,0 +1,112 @@
+.navbar-nav .nav-item {
+  position: relative;
+}
+.navbar-nav .nav-link {
+  color: white;
+  font-size: 16px;
+  padding: 10px 15px;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+.navbar-nav .nav-link:hover {
+  color: gold;
+}
+.navbar-nav .nav-item::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  width: 0;
+  height: 2.5px;
+  background-color: gold;
+  transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+.navbar-nav .nav-item:hover::after {
+  width: 55%;
+  left: 20%;
+}
+
+
+/* Basic Navbar Styles */
+.navbar {
+  width: 100%;
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 30px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  transition: background 0.3s;
+}
+
+.navbar.scrolled {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.navbar-brand {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+}
+
+.nav-links ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin: 0 15px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 10px;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: gold;
+}
+
+/* Gold Underline Effect */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background-color: gold;
+  transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+
+.nav-links a:hover::after {
+  width: 50%;
+  left: 25%;
+}
+
+/* Mobile Menu Button (Hidden Since Navbar is Hidden on Small Screens) */
+.navbar-toggler {
+  display: none;
+}
+
+/* Hide Navbar Completely on Small Screens */
+@media (max-width: 991px) {
+  .navbar {
+    display: none;
+  }
+}

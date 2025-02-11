@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import "./Header.css"; // Import the CSS file
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -7,11 +8,11 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0);
+      setIsScrolled(window.scrollY > 50);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const toggleMobileMenu = () => {
@@ -23,69 +24,39 @@ export default function Header() {
   };
 
   return (
-    <header>
-      <Link to="/" className="navbar-brand">Surya</Link>
-      <nav
-        className={`navbar navbar-expand-lg ftco-navbar-light ${
-          isScrolled ? 'scrolled awake' : ''
-        }`}
-      >
-        <div className="container">
-          {/* Hamburger Button */}
-          <button
-            className={`navbar-toggler ${isMobileMenuOpen ? 'active' : ''}`}
-            type="button"
-            onClick={toggleMobileMenu}
-          >
-            <span className="oi oi-menu"></span> Menu
-          </button>
+    <header className={`navbar ${isScrolled ? "scrolled" : ""}`}>
+      <div className="container">
+        {/* Brand Logo */}
+        <Link to="/" className="navbar-brand">
+          Surya
+        </Link>
 
-          {/* Navigation Links */}
-          <div
-            className={`navbar-collapse collapse ${
-              isMobileMenuOpen ? 'show' : ''
-            }`}
-          >
-            <ul className="navbar-nav ml-auto">
-              <li className="nav-item">
-                <a href="#home-section" className="nav-link" onClick={closeMobileMenu}>
-                  Home
+        {/* Hamburger Button (Only for Mobile) */}
+        <button className="navbar-toggler" onClick={toggleMobileMenu}>
+          ☰
+        </button>
+
+        {/* Navigation Links */}
+        <nav className={`nav-links ${isMobileMenuOpen ? "mobile-open" : ""}`}>
+          <ul>
+            {[
+              { name: "Home", link: "#home-section" },
+              { name: "About", link: "#about-section" },
+              { name: "Resume", link: "#resume-section" },
+              { name: "Works", link: "#services-section" },
+              { name: "Skills", link: "#skills-section" },
+              { name: "Projects", link: "#projects-section" },
+              { name: "Contact", link: "#contact-section" },
+            ].map((item, index) => (
+              <li key={index}>
+                <a href={item.link} onClick={closeMobileMenu}>
+                  {item.name}
                 </a>
               </li>
-              <li className="nav-item">
-                <a href="#about-section" className="nav-link" onClick={closeMobileMenu}>
-                  About
-                </a>
-              </li>
-              <li className="nav-item">
-                <a href="#resume-section" className="nav-link" onClick={closeMobileMenu}>
-                  Resume
-                </a>
-              </li>
-              <li className="nav-item">
-                <a href="#services-section" className="nav-link" onClick={closeMobileMenu}>
-                  Works
-                </a>
-              </li>
-              <li className="nav-item">
-                <a href="#skills-section" className="nav-link" onClick={closeMobileMenu}>
-                  Skills
-                </a>
-              </li>
-              <li className="nav-item">
-                <a href="#projects-section" className="nav-link" onClick={closeMobileMenu}>
-                  Projects
-                </a>
-              </li>
-              <li className="nav-item">
-                <a href="#contact-section" className="nav-link" onClick={closeMobileMenu}>
-                  Contact
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+            ))}
+          </ul>
+        </nav>
+      </div>
     </header>
   );
 }
