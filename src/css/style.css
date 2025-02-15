@@ -4856,3 +4856,166 @@ textarea.form-control {
   align-items: center;
   z-index: 9999; /* Ensure it appears above other content */
 }
+
+.header-nav .nav-buttons {
+  display: flex;
+  gap: 0 13px;
+  margin-right: 3%;
+}
+
+.nav-btn {
+  font-size: 1.2rem;
+  color: #eeeeee;
+  transition: all 0.3s;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+}
+
+.hamburger {
+  position: fixed;
+  right: 4%;
+  top: 38px;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 10000;
+  transition: top 0.3s;
+}
+
+.line {
+  display: inline-block;
+  height: 2px;
+  width: 25px;
+  background-color: #eeeeee;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.nav-buttons-mobile {
+  position: fixed;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(40vw);
+  top: 0px;
+  gap: 30px;
+  height: 100vh;
+  width: 60vw;
+  backdrop-filter: blur(2px) saturate(180%);
+  -webkit-backdrop-filter: blur(2px) saturate(180%);
+  background-color: rgba(0, 0, 0, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  z-index: 9999;
+  padding: 10% 5%;
+  transition: transform 0.3s ease;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+}
+
+.nav-buttons-mobile .nav-btn {
+  width: 100%;
+  text-align: center;
+}
+
+.hidden-nav {
+  transform: translateX(100vw);
+}
+
+.close-1 {
+  transform: rotate(45deg) translateY(10px);
+}
+
+.close-2 {
+  opacity: 0;
+  transform: translateX(-35px);
+}
+
+.close-3 {
+  transform: rotate(-45deg) translateY(-10px);
+}
+
+@media screen and (min-width: 350px) and (max-width: 800px) {
+  .overlay {
+    gap: 10px;
+  }
+  .overlay h1 {
+    margin-bottom: 5px;
+  }
+  .header-nav .nav-buttons {
+    display: none;
+  }
+
+  .nav-buttons-mobile {
+    display: flex;
+  }
+
+  .header-nav .branding .brand-name {
+    transform: translateY(0);
+  }
+  h1 {
+    font-size: 1.7rem;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .hero img {
+    width: 90%;
+  }
+
+  .nav-btn:focus {
+    color: white;
+    background-color: #767ecf;
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #767ecf;
+  }
+
+  .about-us {
+    padding: 10% 8%;
+    gap: 30px;
+    text-align: center;
+  }
+
+  footer {
+    margin-top: 20%;
+    align-items: center;
+    flex-direction: column;
+    padding: 7% 9%;
+  }
+
+  .contact-card {
+    margin-top: 20%;
+  }
+  .social-handles {
+    margin-left: 30%;
+    margin-right: auto;
+  }
+
+  .schedule-event-logo {
+    display: none;
+  }
+
+  .top {
+    bottom: 8vw;
+    right: 8vw;
+  }
+}
+@media (min-width: 390px) and (max-width: 844px) {
+  .nav-buttons-mobile {
+    transform: translateX(50vw);
+  }
+  .hidden-nav {
+    transform: translateX(120vw);
+  }
+}
+@media (max-width: 380px) {
+  .hidden-nav {
+    transform: translateX(250vw);
+  }
+}

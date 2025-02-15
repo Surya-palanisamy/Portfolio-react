@@ -13,7 +13,6 @@ import Skills from "./components/Skills";
 import "./css/ajax-loader.gif";
 import "./css/animate.css";
 import "./css/icomoon.css";
-import "./css/mobile-nav.css";
 import "./css/style.css";
 
 function App() {
