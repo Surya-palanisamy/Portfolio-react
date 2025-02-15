@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,991,991italic,900,900italic);
 body {
   font-family: "poppins", sans-serif;
   margin: 0;
@@ -125,7 +125,7 @@ h2 {
   color: #0077b5;
 }
 .content {
-  max-width: 800px;
+  max-width: 991px;
   margin: 0 auto;
   text-align: center;
 }
@@ -4939,7 +4939,7 @@ textarea.form-control {
   transform: rotate(-45deg) translateY(-10px);
 }
 
-@media screen and (min-width: 350px) and (max-width: 800px) {
+@media screen and (min-width: 350px) and (max-width: 991px) {
   .overlay {
     gap: 10px;
   }
