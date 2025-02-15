@@ -12,47 +12,47 @@ export default function Contact() {
 
   useEffect(() => {
     initContentWayPoint();
+    window.dispatchEvent(new Event("scroll"));
   }, []);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
-const handleSubmit = async (e) => {
-  e.preventDefault();
-  if (loading) return; // Prevent multiple submissions
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (loading) return; // Prevent multiple submissions
 
-  setLoading(true);
-  const scriptURL =
-    "https://script.google.com/macros/s/AKfycbwIxSdl6TG-hnzwGlJ0WmsiM0Wh0tcojr2OEFMwYK6dkY1NB_lVBR3pR6Pwti-Ea-U/exec";
+    setLoading(true);
+    const scriptURL =
+      "https://script.google.com/macros/s/AKfycbwIxSdl6TG-hnzwGlJ0WmsiM0Wh0tcojr2OEFMwYK6dkY1NB_lVBR3pR6Pwti-Ea-U/exec";
 
-  try {
-    const response = await fetch(scriptURL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        ...formData,
-        timestamp: new Date().toISOString(),
-      }),
-    });
+    try {
+      const response = await fetch(scriptURL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...formData,
+          timestamp: new Date().toISOString(),
+        }),
+      });
 
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      const result = await response.json();
+      alert(result.message || "Message sent successfully!");
+      setFormData({ name: "", email: "", subject: "", message: "" });
+    } catch (error) {
+      console.error("Error:", error);
+      alert("There was an error submitting your message. Please try again.");
+    } finally {
+      setLoading(false);
     }
-
-    const result = await response.json();
-    alert(result.message || "Message sent successfully!");
-    setFormData({ name: "", email: "", subject: "", message: "" });
-  } catch (error) {
-    console.error("Error:", error);
-    alert("There was an error submitting your message. Please try again.");
-  } finally {
-    setLoading(false);
-  }
-};
-
+  };
 
   return (
     <section
@@ -102,7 +102,9 @@ const handleSubmit = async (e) => {
               </div>
               <h3 className="mb-4">Email Address</h3>
               <p>
-                <a href="mailto:sit23it161@sairamtap.edu.in">sit23it161@sairamtap.edu.in</a>
+                <a href="mailto:sit23it161@sairamtap.edu.in">
+                  sit23it161@sairamtap.edu.in
+                </a>
               </p>
             </div>
           </div>

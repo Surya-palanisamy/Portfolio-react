@@ -1,9 +1,10 @@
-import React, { useEffect } from 'react';
-import { initContentWayPoint } from '../utils/customScripts';
+import React, { useEffect } from "react";
+import { initContentWayPoint } from "../utils/customScripts";
 
 export default function Services() {
   useEffect(() => {
     initContentWayPoint();
+    window.dispatchEvent(new Event("scroll"));
   }, []);
 
   return (
@@ -54,4 +55,3 @@ export default function Services() {
     </section>
   );
 }
-

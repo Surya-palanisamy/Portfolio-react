@@ -252,9 +252,7 @@ html {
   }
   .nav-btn:focus {
     color: #fff;
-    background-color: #767ecf;
     transform: scale(1.1);
-    box-shadow: 0 0 15px #767ecf;
   }
 }
 @media (min-width: 390px) and (max-width: 844px) {

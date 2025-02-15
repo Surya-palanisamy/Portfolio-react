@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom"; // Import Link from React Router
 
 const Mobinav = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -58,27 +59,27 @@ const Mobinav = () => {
     <>
       <nav className="header-nav"></nav>
       <div className={`nav-buttons-mobile ${isNavOpen ? "" : "hidden-nav"}`}>
-        <a href="#home-section" className="nav-btn" onClick={closeNav}>
+        <Link to="/" className="nav-btn" onClick={closeNav}>
           Home
-        </a>
-        <a href="#about-section" className="nav-btn" onClick={closeNav}>
+        </Link>
+        <Link to="/about" className="nav-btn" onClick={closeNav}>
           About
-        </a>
-        <a href="#resume-section" className="nav-btn" onClick={closeNav}>
+        </Link>
+        <Link to="/resume" className="nav-btn" onClick={closeNav}>
           Resume
-        </a>
-        <a href="#services-section" className="nav-btn" onClick={closeNav}>
+        </Link>
+        <Link to="/services" className="nav-btn" onClick={closeNav}>
           Works
-        </a>
-        <a href="#skills-section" className="nav-btn" onClick={closeNav}>
+        </Link>
+        <Link to="/skills" className="nav-btn" onClick={closeNav}>
           Skills
-        </a>
-        <a href="#projects-section" className="nav-btn" onClick={closeNav}>
+        </Link>
+        <Link to="/projects" className="nav-btn" onClick={closeNav}>
           Projects
-        </a>
-        <a href="#contact-section" className="nav-btn" onClick={closeNav}>
+        </Link>
+        <Link to="/contact" className="nav-btn" onClick={closeNav}>
           Contact
-        </a>
+        </Link>
       </div>
       <div className="hamburger" onClick={toggleNav}>
         <span className="line"></span>

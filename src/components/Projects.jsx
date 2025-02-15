@@ -8,6 +8,10 @@ import messenger from "../assets/messenger.jpg";
 import { initContentWayPoint, initMagnificPopup } from "../utils/customScripts";
 
 const ProjectCard = ({ title, description, imgUrl, liveLink, codeLink }) => {
+    useEffect(() => {
+      initContentWayPoint();
+      window.dispatchEvent(new Event("scroll"));
+    }, []);
   return (
     <div className="col-md-6">
       <div className="project-card ftco-animate">

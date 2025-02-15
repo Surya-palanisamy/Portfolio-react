@@ -40,18 +40,18 @@ export default function Header() {
         <nav className={`nav-links ${isMobileMenuOpen ? "mobile-open" : ""}`}>
           <ul>
             {[
-              { name: "Home", link: "#home-section" },
-              { name: "About", link: "#about-section" },
-              { name: "Resume", link: "#resume-section" },
-              { name: "Works", link: "#services-section" },
-              { name: "Skills", link: "#skills-section" },
-              { name: "Projects", link: "#projects-section" },
-              { name: "Contact", link: "#contact-section" },
+              { name: "Home", link: "/" },
+              { name: "About", link: "/about" },
+              { name: "Resume", link: "/resume" },
+              { name: "Works", link: "/services" },
+              { name: "Skills", link: "/skills" },
+              { name: "Projects", link: "/projects" },
+              { name: "Contact", link: "/contact" },
             ].map((item, index) => (
               <li key={index}>
-                <a href={item.link} onClick={closeMobileMenu}>
+                <Link to={item.link} onClick={closeMobileMenu}>
                   {item.name}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

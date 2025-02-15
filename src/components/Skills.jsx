@@ -4,6 +4,7 @@ import { initContentWayPoint } from "../utils/customScripts";
 export default function Skills() {
   useEffect(() => {
     initContentWayPoint();
+    window.dispatchEvent(new Event("scroll"));
   }, []);
 
   return (
