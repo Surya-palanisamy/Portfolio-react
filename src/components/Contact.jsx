@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { initContentWayPoint } from "../utils/customScripts";
 
 export default function Contact() {
@@ -19,9 +20,10 @@ export default function Contact() {
     const { name, value } = e.target;
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (loading) return; // Prevent multiple submissions
+    if (loading) return;
 
     setLoading(true);
     const scriptURL =
@@ -72,55 +74,6 @@ export default function Contact() {
               Let's connect and create something amazing together! Reach out
               anytime.
             </p>
-          </div>
-        </div>
-        <div className="row d-flex contact-info mb-5">
-          <div className="col-md-6 col-lg-3 d-flex ftco-animate">
-            <div className="align-self-stretch box p-4 text-center">
-              <div className="icon d-flex align-items-center justify-content-center">
-                <span className="icon-map-signs"></span>
-              </div>
-              <h3 className="mb-4">Address</h3>
-              <p>Chennai, Tamilnadu, India, 600127</p>
-            </div>
-          </div>
-          <div className="col-md-6 col-lg-3 d-flex ftco-animate">
-            <div className="align-self-stretch box p-4 text-center">
-              <div className="icon d-flex align-items-center justify-content-center">
-                <span className="icon-phone2"></span>
-              </div>
-              <h3 className="mb-4">Contact Number</h3>
-              <p>
-                <a href="tel:7418036039">+91 7418036039</a>
-              </p>
-            </div>
-          </div>
-          <div className="col-md-6 col-lg-3 d-flex ftco-animate">
-            <div className="align-self-stretch box p-4 text-center">
-              <div className="icon d-flex align-items-center justify-content-center">
-                <span className="icon-paper-plane"></span>
-              </div>
-              <h3 className="mb-4">Email Address</h3>
-              <p>
-                <a href="mailto:sit23it161@sairamtap.edu.in">
-                  sit23it161@sairamtap.edu.in
-                </a>
-              </p>
-            </div>
-          </div>
-          <div className="col-md-6 col-lg-3 d-flex ftco-animate">
-            <div className="align-self-stretch box p-4 text-center">
-              <div className="icon d-flex align-items-center justify-content-center">
-                <span className="icon-github"></span>
-              </div>
-              <h3 className="mb-4">GitHub</h3>
-              <a
-                href="https://github.com/Surya-palanisamy"
-                className="text-blue-500"
-              >
-                Link
-              </a>
-            </div>
           </div>
         </div>
         <div className="row justify-content-center">
@@ -183,6 +136,56 @@ export default function Contact() {
                 />
               </div>
             </form>
+          </div>
+        </div>
+        <div className="row d-flex contact-info mb-5">
+          <div className="col-md-6 col-lg-3 d-flex ftco-animate">
+            <div className="align-self-stretch box p-4 text-center">
+              <div className="icon d-flex align-items-center justify-content-center">
+                <span className="icon-map-signs"></span>
+              </div>
+              <h3 className="mb-4">Address</h3>
+              <p>Chennai, Tamilnadu, India, 600127</p>
+            </div>
+          </div>
+          <div className="col-md-6 col-lg-3 d-flex ftco-animate">
+            <div className="align-self-stretch box p-4 text-center">
+              <div className="icon d-flex align-items-center justify-content-center">
+                <span className="icon-phone2"></span>
+              </div>
+              <h3 className="mb-4">Contact Number</h3>
+              <p>
+                <a href="tel:+917418036039">+91 7418036039</a>
+              </p>
+            </div>
+          </div>
+          <div className="col-md-6 col-lg-3 d-flex ftco-animate">
+            <div className="align-self-stretch box p-4 text-center">
+              <div className="icon d-flex align-items-center justify-content-center">
+                <span className="icon-paper-plane"></span>
+              </div>
+              <h3 className="mb-4">Email Address</h3>
+              <p>
+                <a href="mailto:sit23it161@sairamtap.edu.in">
+                  sit23it161@sairamtap.edu.in
+                </a>
+              </p>
+            </div>
+          </div>
+          <div className="col-md-6 col-lg-3 d-flex ftco-animate">
+            <div className="align-self-stretch box p-4 text-center">
+              <div className="icon d-flex align-items-center justify-content-center">
+                <span className="icon-github"></span>
+              </div>
+              <h3 className="mb-4">GitHub</h3>
+              <Link
+                to="https://github.com/Surya-palanisamy"
+                target="_blank"
+                className="text-blue-500"
+              >
+                Link
+              </Link>
+            </div>
           </div>
         </div>
       </div>

@@ -1,9 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
-
 export default function Footer() {
   return (
-    <footer className="ftco-footer ftco-section">
+    <footer className="ftco-footer ftco">
       <div className="container">
         <div className="row mb-5">
           <div className="col-md">
@@ -40,27 +38,27 @@ export default function Footer() {
               <h2 className="ftco-heading-2">Links</h2>
               <ul className="list-unstyled">
                 <li>
-                  <a href="#home-section">
+                  <a href="home">
                     <span className="icon-long-arrow-right mr-2"></span>Home
                   </a>
                 </li>
                 <li>
-                  <a href="#about-section">
+                  <a href="about">
                     <span className="icon-long-arrow-right mr-2"></span>About
                   </a>
                 </li>
                 <li>
-                  <a href="#services-section">
+                  <a href="services">
                     <span className="icon-long-arrow-right mr-2"></span>Works
                   </a>
                 </li>
                 <li>
-                  <a href="#projects-section">
+                  <a href="projects">
                     <span className="icon-long-arrow-right mr-2"></span>Projects
                   </a>
                 </li>
                 <li>
-                  <a href="#contact-section">
+                  <a href="contact">
                     <span className="icon-long-arrow-right mr-2"></span>Contact
                   </a>
                 </li>
