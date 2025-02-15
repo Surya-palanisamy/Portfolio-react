@@ -4256,7 +4256,7 @@ textarea.form-control {
 .ftco-footer {
   font-size: 16px;
   background: #000;
-  padding: 7em 0;
+
   z-index: 0;
 }
 .ftco-footer .ftco-footer-logo {
@@ -4822,7 +4822,6 @@ textarea.form-control {
   min-height: 300px;
 }
 
-
 @media (max-width: 1200px) {
   .ftco-footer .ftco-footer-widget {
     margin-bottom: 30px;
@@ -4843,7 +4842,6 @@ textarea.form-control {
     word-break: break-word;
   }
 }
-
 
 .loading-overlay {
   position: fixed;
